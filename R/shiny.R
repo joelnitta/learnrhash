@@ -97,9 +97,9 @@ encoder_logic = function(strip_output = FALSE) {
 #' @export
 default_ui = function(url = "http://google.com") {
   shiny::div(
-    "If you have completed this tutorial and are happy with all of your",
-    "solutions, please click the button below to generate your hash and",
-    "submit it using the following link:",
+    "このチュートリアルを完了し、すべての解答に満足している場合は、",
+    "「Generate」ボタンをクリックしてハッシュを生成し、",
+    "それを次のリンクから提出してください。",
     shiny::tags$br(),
     shiny::tags$h3(
       shiny::tags$a(url, href=url, target="_blank")
