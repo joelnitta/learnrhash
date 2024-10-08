@@ -40,6 +40,9 @@ extract_hash = function(df, hash = "hash") {
       hash = lapply(.data[[hash]], learnrhash::decode_obj),
       hash = lapply(.data[[hash]], fix_empty_state_obj)
     ) %>%
+    dplyr::filter(
+      sapply(.data[[hash]], function(x) inherits(x, "tbl"))
+    ) %>%
     tidyr::unnest_longer(.data[[hash]]) %>%
     tidyr::unnest_wider(.data[[hash]]) %>%
     dplyr::relocate(.data[["label"]], .before="type")
